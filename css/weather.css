@@ -1,0 +1,263 @@
+@charset "UTF-8";
+* {
+  font-family: sans-serif, 微軟正黑體;
+}
+
+html, body {
+  padding: 0px;
+  height: 0px;
+  background-color: #333;
+}
+
+div.all {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-left: 5%;
+  padding-right: 5%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+@media (max-width: 1320px) {
+  div.all {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+main.main {
+  width: 50%;
+  background-color: #333;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.daybox {
+  margin: 12px 12px 64px 12px;
+  width: 800px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  max-width: 360px;
+  max-height: 260px;
+  -webkit-box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  -webkit-transition-duration: 1s;
+          transition-duration: 1s;
+  display: none;
+}
+
+.daybox .top {
+  height: 180px;
+  color: #f3f3f3;
+  background-color: #43586B;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.daybox .sun {
+  top: 38px;
+  position: absolute;
+}
+
+.daybox .text_area {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.daybox .text_area .temperature {
+  font-size: 56px;
+}
+
+.daybox .text_area .address {
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+
+.daybox .text_area .discribe {
+  margin-top: 4px;
+}
+
+.daybox .bottom {
+  background-color: #f3f3f3;
+  color: #1D678F;
+  max-height: 4px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 8px 24px;
+}
+
+.daybox .bottom div {
+  width: 100%;
+  opacity: 0;
+  padding: 2px;
+  font-size: 16px;
+}
+
+.daybox:hover .bottom {
+  max-height: 0px;
+  -webkit-transition-duration: 1s;
+          transition-duration: 1s;
+  max-height: 64px;
+}
+
+.daybox:hover .bottom div {
+  opacity: 1;
+  -webkit-transition-delay: 0.3s;
+          transition-delay: 0.3s;
+}
+
+.daybox_view {
+  display: block;
+}
+
+.sun {
+  width: 60px;
+  height: 60px;
+  border-radius: 100px;
+  background-color: #FFBA53;
+}
+
+.cloud {
+  width: 100px;
+  height: 36px;
+  position: relative;
+  top: 80px;
+  border-radius: 20px;
+  background-color: #f3f3f3;
+  -webkit-box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+  -webkit-animation: clouddrift 4s infinite;
+          animation: clouddrift 4s infinite;
+}
+
+.cloud:before, .cloud:after {
+  background-color: #f3f3f3;
+  content: "";
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  position: absolute;
+}
+
+.cloud:before {
+  left: 16px;
+  top: -28px;
+}
+
+.cloud:after {
+  left: 35px;
+  top: -20px;
+}
+
+.cloud .rain {
+  width: 2px;
+  height: 10px;
+  position: absolute;
+  left: 45px;
+  bottom: 15px;
+  -webkit-animation: raindrop 1s infinite linear;
+          animation: raindrop 1s infinite linear;
+  background-color: #f3f3f3;
+}
+
+.cloud .rain2 {
+  left: 70px;
+  bottom: 20px;
+  -webkit-animation-delay: -0.4s;
+          animation-delay: -0.4s;
+}
+
+.cloud .rain3 {
+  left: 30px;
+  bottom: 18px;
+  -webkit-animation-delay: -0.7s;
+          animation-delay: -0.7s;
+}
+
+@-webkit-keyframes raindrop {
+  0% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  100% {
+    -webkit-transform: translateY(50px);
+            transform: translateY(50px);
+    opacity: 0%;
+  }
+}
+
+@keyframes raindrop {
+  0% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  100% {
+    -webkit-transform: translateY(50px);
+            transform: translateY(50px);
+    opacity: 0%;
+  }
+}
+
+svg.map {
+  background-color: #333;
+  width: 40%;
+}
+
+svg.map path {
+  stroke: white;
+  fill: transparent;
+  cursor: pointer;
+}
+
+svg.map path:hover {
+  fill: #FFBA53;
+  -webkit-transform: translate(-5px, -5px);
+          transform: translate(-5px, -5px);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+@media (max-width: 900px) {
+  svg.map {
+    width: 60%;
+  }
+}
+/*# sourceMappingURL=weather.css.map */
